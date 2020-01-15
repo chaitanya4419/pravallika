@@ -5,6 +5,7 @@ pipeline {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/chaitanya4419/pravallika.git'
+	    sh "ibmcloud login -a https://cloud.ibm.com --apikey tNRRYqdjFs4WdD516EUeWQ1o1ox2vKjeFhJTWwT7PxPA -r eu-gb -o chaicho1@in.ibm.com -s dev"
 		 }
 	  }
 	  stage('IBM Cloud') {
@@ -12,7 +13,7 @@ pipeline {
 			  sh "ibmcloud login -a https://cloud.ibm.com --apikey tNRRYqdjFs4WdD516EUeWQ1o1ox2vKjeFhJTWwT7PxPA -r eu-gb -o chaicho1@in.ibm.com -s dev"
 			  sh "ibmcloud targer -g Default-cc"
 			  sh "ibmcloud plugin install cloud-functions"
-			  sh "ibmcloud fn list "
+			  sh "ibmcloud fn list"
 		  }
 	  }
    }
