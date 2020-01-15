@@ -5,9 +5,14 @@ pipeline {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/chaitanya4419/pravallika.git'
-
-
-         }
-      }
+		 }
+	  }
+	  stage('IBM Cloud') {
+		  steps {
+			  ibmcloud login -a "https://cloud.ibm.com" --apikey tNRRYqdjFs4WdD516EUeWQ1o1ox2vKjeFhJTWwT7PxPA -r eu-gb -o chaicho1@in.ibm.com -s dev -g Default-cc
+			  ibmcloud plugin install cloud-functions
+			  ibmcloud fn list 
+		  }
+	  }
    }
 }
