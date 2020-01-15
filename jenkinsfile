@@ -13,7 +13,6 @@ pipeline {
 			  sh "ibmcloud targer -g Default-cc"
 			  sh "ibmcloud plugin install cloud-functions"
 			  sh "ibmcloud fn list "
-			  ''' 
 		  }
 	  }
    }
