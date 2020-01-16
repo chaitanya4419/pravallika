@@ -3,9 +3,7 @@ pipeline {
       stages {
         stage ('clone git repo') {
             steps {
-                    sh '''
-                    	git clone https://github.com/chaitanya4419/pravallika.git
-			'''
+                    	git 'https://github.com/chaitanya4419/pravallika.git'
 					}
 				}
 		stage('IBM Cloud Deploy') {
